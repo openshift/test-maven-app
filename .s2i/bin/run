@@ -1,0 +1,4 @@
+#!/bin/sh
+echo ".s2i/bin/run: USING_ENV_FROM_FILE=$USING_ENV_FROM_FILE"
+echo ".s2i/bin/run: running app"
+exec java -cp /opt/jboss/hello.jar com.example.hello.Hello
