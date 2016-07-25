@@ -5,7 +5,7 @@ This repository contains very trivial program on Java. To build and run this pro
 
 ```console
 $ mvn package
-$ java -jar target/hello.jar
+$ java -cp target/hello.jar com.example.hello.Hello
 Hello, world!
 ```
 
