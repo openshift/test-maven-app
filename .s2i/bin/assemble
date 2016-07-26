@@ -2,4 +2,4 @@
 echo ".s2i/bin/assemble: USING_ENV_FROM_FILE=$USING_ENV_FROM_FILE"
 echo ".s2i/bin/assemble: assembling app within builder image"
 cd /opt/s2i/destination/src
-exec mvn package
+exec mvn package | egrep -v '^\[INFO\] Download(ing|ed):'
