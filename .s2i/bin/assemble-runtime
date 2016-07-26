@@ -1,3 +1,4 @@
 #!/bin/sh
-echo ".s2i/bin/assemble-runtime: USING_ENV_FROM_FILE=$USING_ENV_FROM_FILE"
+echo ".s2i/bin/assemble-runtime: USING_ENV_FROM_FILE=${USING_ENV_FROM_FILE:-no}"
+echo ".s2i/bin/assemble-runtime: USING_ENV_FROM_BUILD_CONFIG=${USING_ENV_FROM_BUILD_CONFIG:-no}"
 echo ".s2i/bin/assemble-runtime: assembling app within runtime image"
