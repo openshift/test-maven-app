@@ -1,0 +1,4 @@
+#!/bin/sh
+echo ".s2i/bin/assemble: assembling app within builder image"
+cd /opt/s2i/destination/src
+exec mvn --batch-mode package | egrep -v '^\[INFO\] Download(ing|ed):'
