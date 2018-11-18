@@ -6,4 +6,9 @@ public class Hello {
 		System.out.println("Hello, world!");
 	}
 	
+	@Test
+	public void testOne(){
+		System.out.println("Hello, world!");
+	}
+	
 }
