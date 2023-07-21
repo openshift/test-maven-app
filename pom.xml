@@ -46,7 +46,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>3.2.0</version> <!-- Updated to version 3.2.0 -->
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.example.hello.Hello</mainClass> <!-- Use the correct main class -->
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
