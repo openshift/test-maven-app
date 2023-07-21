@@ -1,20 +1,21 @@
-#build:
-FROM dockette/openjdk-mvn as build 
+# Build Stage
+FROM maven:3.8.3-openjdk-8 AS build
 
 WORKDIR /app
 
-COPY pom.xml /app
-COPY src /app/src
+COPY pom.xml /app/
+COPY src /app/src/
 
-RUN mvn package
+RUN mvn clean package
 
-#run
-FROM openjdk:7u91-jre-alpine
+# Run Stage
+FROM openjdk:8-jre
 
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar /app/
+COPY --from=build /app/target/*.jar /app/app.jar
 
 EXPOSE 3333
 
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
